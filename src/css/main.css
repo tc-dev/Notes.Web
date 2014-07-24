@@ -1,0 +1,728 @@
+/**
+ * main.css v1.1
+ * Syrena admin template
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+body{
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+.row{
+	margin:0;
+	margin-bottom: 20px;
+}
+
+/**
+ * Theme switcher
+ */
+.theme-switcher{
+	position: fixed;
+	z-index: 9;
+	top: 116px;
+	right: 0;
+	background-color: #000000;
+	color: #ecf0f1;
+	box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.125);
+	height: 30px;
+	overflow: hidden;
+
+	-webkit-transition: height .3s ease;
+	-moz-transition: height .3s ease;
+	-ms-transition: height .3s ease;
+	-o-transition: height .3s ease;
+	transition: height .3s ease;
+}
+
+
+/**
+ * Theme Split Layout
+ * We use fixe mode layout width every section inside wrapper
+ */
+#wrapper{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.side-left{
+	position: fixed;
+	padding: 0;
+	width: 300px;
+	height: 100%;
+	
+	z-index: 2;
+}
+	.side-header{
+		margin: 0;
+		padding: 0 10px;
+		height: 60px;
+	}
+		.side-header > .brand{
+			display: block;
+			margin: 0;
+			padding: 0 5px;
+			font-size: 1.6em;
+			line-height: 60px;
+			text-transform: uppercase;
+		}
+			.side-header > .brand > .icon{
+				margin-top: -5px;
+				font-size: 42px;
+				vertical-align: middle;
+			}
+
+		.side-header > .side-form{
+			padding-top: 12.5px;
+		}
+			.side-header > .side-form > .form-control{
+				border-radius: 3px;
+				vertical-align: middle;
+				background-image: none;
+				-webkit-box-shadow: none;
+				        box-shadow: none;
+			}
+
+	.side-body{
+		position: relative;
+		height: 100%;
+		padding-bottom: 60px;
+	}
+		.side-body > .side-nav{
+			height: 100%;
+			overflow: auto;
+			padding-left: 0;
+			padding-top: 0;
+			padding-bottom: 5px;
+		}
+			.side-nav ul{
+				margin: 0;
+				padding: 0;
+			}
+			.side-nav .side-nav-item{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: block;
+				margin-bottom: -1px;
+			}
+			.side-nav-item > a{
+				display: block;
+				font-size: 1.2em;
+				font-weight: normal;
+				padding: 15px 15px 15px 80px;
+			}
+			.side-nav-item > a:first-child{
+				padding-top: 17px;
+			}
+			.side-nav-item > a:hover,
+			.side-nav-item > a:focus {
+			  	text-decoration: none;
+			}
+
+			.side-nav-item.active > a,
+			.side-nav-item.active > a:hover,
+			.side-nav-item.active > a:focus {
+			  	z-index: 2;
+			}
+			
+			.nav-item-caret{
+				float: left;
+				margin-left: -65px;
+				margin-top: 4px;
+				font-family: "Ionicons";
+				display: inline-block;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			.nav-item-caret:before{
+				content: "\f153";
+			}
+
+			.nav-item-icon{
+				float: left;
+				margin-left: -42px;
+				width: 32px;
+				margin-top: -6px;
+				margin-right: 10px;
+				font-size: 32px;
+			}
+
+			.side-nav-item > a > .badge {
+			  	float: right;
+			  	margin-top: 3px;
+			}
+			.side-nav-item > a > .badge + .badge {
+			  margin-right: 5px;
+			}
+
+				.side-nav-child{
+					position: absolute;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+
+					-ms-transform: translateX(-100%);
+					-webkit-transform: translateX(-100%);
+					-moz-transform: translateX(-100%);
+					transform: translateX(-100%);
+
+					-webkit-transition: all 0.3s ease-in-out;
+					-moz-transition: all 0.3s ease-in-out;
+					-ms-transition: all 0.3s ease-in-out;
+					-o-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+
+					z-index: 3;
+				}
+				.side-nav-child.open{
+					-ms-transform: translateX(0);
+					-webkit-transform: translateX(0);
+					-moz-transform: translateX(0);
+					transform: translateX(0);
+				}
+
+
+
+			.side-nav .side-nav-item-heading {
+			  	margin-top: 0px;
+			  	margin-bottom: 5px;
+			}
+				.side-nav .side-nav-item-heading > a{
+					display: block;
+					text-decoration: none;
+					font-size: 1.2em;
+					font-weight: normal;
+					padding: 15px;
+				}
+				.side-nav-item-heading .nav-item-caret{
+					float: right;
+					margin-right: 10px;
+				}
+				.side-nav-item-heading .nav-item-caret:before{
+					content: "\f154";
+				}
+
+			.side-nav .side-nav-item-text {
+			  	margin-bottom: 0;
+			  	line-height: 1.3;
+			}
+		
+		.side-body > .side-wrapper{
+			position: absolute;		/* try to use relative for large searching (like .side-wrapper-large) */
+			padding: 10px;
+			padding-bottom: 60px;	/* remove this if you use relative position */
+			width: 300px;
+			height: 100%;
+			display: none;
+			overflow: hidden;
+			
+			z-index: 99;
+		}
+		.side-body > .side-wrapper.side-wrapper-large{
+			position: relative;
+			padding-bottom: 10px;
+			overflow: auto;
+		}
+		.side-body > .side-wrapper.open{
+			/*display: block;*/
+		}
+			.side-wrapper .side-wrapper-result{
+				display: none;
+			}
+
+
+.content{
+	position: fixed;
+	padding: 0;
+	padding-left: 300px;
+	width: 100%;
+	height: 100%;
+
+	z-index: 1;
+}
+
+.content.content-lg{
+	padding-left: 0 !important;
+	z-index: 3 !important;
+}
+	.content-header{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		height: 60px;
+		text-align: center;
+		z-index: 100;
+	}
+		.content-header > .header-actions{
+			position: relative;
+			line-height: 60px;
+			z-index: 6;
+		}
+
+		.content-header > .content-title{
+			position: absolute;
+			left: 0;
+			right: 0;
+			font-size: 1.4em;
+			font-weight: 500;
+			margin: 0 !important;
+			padding: 0 !important;
+			line-height: 60px;
+			text-align: center;
+			z-index: 5;
+		}
+	
+	.content-spliter{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.content-spliter::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+		.content-main{
+			position: absolute;
+			margin: 0;
+			left: 0;
+			right: -1px;
+			padding-bottom: 56px;
+			height: 100%;
+			overflow: auto;
+
+			-webkit-transition: all 0.3s ease;
+			-moz-transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+			-o-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+		}
+		.content-main.content-main-md{
+			right: -1px;
+		}
+
+			.content-app{
+				position: relative;
+				height: 100%;
+				overflow: auto;
+			}
+			.content-app.fixed-header{
+				overflow: hidden;
+				padding-bottom: 60px;
+			}
+				.app-header{
+					position: relative;
+					width: 100%;
+					padding: 10px;
+					height: 56px;
+
+					z-index: 99;
+				}
+				.content-app.fixed-header > .app-header{
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+				}
+
+				.app-header > .nav{
+					margin-top: -2px;
+				}
+				.app-header > .nav.nav-tabs{
+					margin-top: 3.5px;
+				}
+				@media (max-width: 767px){
+					/* make justified inline on small screen, only on app and madule header */
+					.app-header > .nav-justified > li{
+						float: left;
+						width: auto;
+					}
+					.app-header > .nav-justified > li+li{
+						margin-left: 2px;
+					}
+				}
+
+				.app-header .breadcrumb{
+					padding-left: 5px;
+					margin: 0;
+				}
+					.app-header > .app-title{
+						margin: 0;
+						padding: 0;
+						font-size: 1.2em;
+						font-weight: 500;
+						line-height: 36px;
+						text-align: center;
+					}
+
+				.app-body{
+					padding: 10px;
+					overflow-x: hidden;
+
+					z-index: 1;
+				}
+				.content-app.fixed-header > .app-body{
+					height: 100%;
+					overflow: auto;
+					overflow-x: hidden;
+				}
+
+
+		.content-aside{
+			position: absolute;
+			padding-bottom: 56px;
+			height: 100%;
+			width: 300px;
+			left: 0;
+			overflow: auto;
+
+			
+			-webkit-transition: all 0.3s ease;
+			-moz-transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+			-o-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+
+			z-index: 4;
+		}
+		.content-aside.open{
+		}
+		
+		.content-aside ~ .content-main {
+			left: 300px;
+		}
+
+			.content-module{
+				position: relative;
+				height: 100%;
+				width: 100%;
+				overflow: auto;
+			}
+			.content-module.fixed-header{
+				overflow: hidden;
+				padding-bottom: 60px;
+			}
+				.module-header > .nav{
+					margin-top: -2px;
+				}
+				.module-header > .nav.nav-tabs{
+					margin-top: 3.5px;
+				}
+				@media (max-width: 767px){
+					/* make justified inline on small screen, only on app and madule header */
+					.module-header > .nav-justified > li{
+						float: left;
+						width: auto;
+					}
+					.module-header > .nav-justified > li+li{
+						margin-left: 2px;
+					}
+				}
+				.module-header{
+					position: relative;
+					padding: 10px;
+					height: 56px;
+
+					z-index: 99;
+				}
+				.content-module.fixed-header > .module-header{
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+				}
+					.module-header > .module-title{
+						margin: 0;
+						padding: 0;
+						font-size: 1.2em;
+						font-weight: 500;
+						line-height: 36px;
+					
+						text-align: center;
+}
+					.module-header .breadcrumb{
+						margin: 0;
+					}
+
+				.module-body{
+					position: relative;
+					padding: 0px;
+
+					z-index: 1;
+				}
+				.content-module.fixed-header > .module-body{
+					width: 100%;
+					height: 100%;
+					overflow: auto;
+					overflow-x: hidden;
+				}
+
+
+
+
+/* Sign page */
+.sign-wrapper{
+	height: 100vh; /* viewport height like percent (http://www.w3.org/TR/css3-values/#viewport-relative-lengths) */
+	width: 100%;
+	top: 0;
+	left: 0;
+	color: #ecf0f1;
+	overflow: hidden;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-moz-transform: translate3d(0px, 0px, 0px);
+  	-ms-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate3d(0px, 0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+
+  	-webkit-transform-style: preserve-3d;
+  	-moz-transform-style: preserve-3d;
+  	-ms-transform-style: preserve-3d;
+  	transform-style: preserve-3d;
+}
+.sign-container{
+	position: relative;
+}
+.sign-brand{
+	text-align: center;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+.sign-brand-logo{
+	margin-bottom: 20px;
+}
+.sign-brand-logo img{
+	width: 72px;
+	height: 72px;
+	line-height: 72px;
+}
+.sign-brand-name{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.sign-footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 5px 5px 15px;
+	text-align: center;
+}
+.sign-footer a{
+	text-decoration: underline;
+	line-height: 1.2em;
+}
+
+.signin,
+.signup,
+.recover{
+	background: url('../img/bg-signin.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.signin:before,
+.signup:before,
+.recover:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	content: '';
+	background-color: rgba(52, 152, 219, .9);
+}
+.signup:before{
+	background-color: rgba(52, 73, 94, .9);
+}
+.recover:before{
+	background-color: rgba(231, 76, 60, .9);
+}
+/* end sign page */
+
+
+/* Error page */
+.error-msg{
+	height: 100vh; /* viewport height like percent (http://www.w3.org/TR/css3-values/#viewport-relative-lengths) */
+	width: 100%;
+	top: 0;
+	left: 0;
+	color: #ecf0f1;
+	overflow: hidden;
+
+
+}
+.error-msg{
+	background: url('../img/bg-signin.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.error-msg:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	content: '';
+	background-color: rgba(236, 240, 241, .9);
+}
+.error-container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 320px;
+
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.error-status{
+	font-size: 10em;
+	text-align: center;
+	margin-bottom: 40px;
+	color: #34495e;
+
+	text-shadow: rgb(215, 218, 219) 1px 1px,
+    rgb(215, 218, 219) 2px 2px,
+    rgb(215, 218, 219) 3px 3px,
+    rgb(216, 219, 220) 4px 4px,
+    rgb(216, 219, 220) 5px 5px,
+    rgb(216, 219, 220) 6px 6px,
+    rgb(216, 220, 221) 7px 7px,
+    rgb(217, 220, 221) 8px 8px,
+    rgb(217, 220, 221) 9px 9px,
+    rgb(217, 220, 221) 10px 10px,
+    rgb(218, 221, 222) 11px 11px,
+    rgb(218, 221, 222) 12px 12px,
+    rgb(218, 221, 222) 13px 13px,
+    rgb(218, 222, 223) 14px 14px,
+    rgb(219, 222, 223) 15px 15px,
+    rgb(219, 222, 223) 16px 16px,
+    rgb(219, 223, 224) 17px 17px,
+    rgb(220, 223, 224) 18px 18px,
+    rgb(220, 223, 224) 19px 19px,
+    rgb(220, 223, 224) 20px 20px,
+    rgb(220, 224, 225) 21px 21px,
+    rgb(221, 224, 225) 22px 22px,
+    rgb(221, 224, 225) 23px 23px,
+    rgb(221, 225, 226) 24px 24px,
+    rgb(222, 225, 226) 25px 25px,
+    rgb(222, 225, 226) 26px 26px,
+    rgb(222, 226, 227) 27px 27px,
+    rgb(222, 226, 227) 28px 28px,
+    rgb(223, 226, 227) 29px 29px,
+    rgb(223, 226, 227) 30px 30px,
+    rgb(223, 227, 228) 31px 31px,
+    rgb(224, 227, 228) 32px 32px,
+    rgb(224, 227, 228) 33px 33px,
+    rgb(224, 228, 229) 34px 34px,
+    rgb(224, 228, 229) 35px 35px,
+    rgb(225, 228, 229) 36px 36px,
+    rgb(225, 229, 230) 37px 37px,
+    rgb(225, 229, 230) 38px 38px,
+    rgb(226, 229, 230) 39px 39px,
+    rgb(226, 229, 230) 40px 40px,
+    rgb(226, 230, 231) 41px 41px,
+    rgb(226, 230, 231) 42px 42px,
+    rgb(227, 230, 231) 43px 43px,
+    rgb(227, 231, 232) 44px 44px,
+    rgb(227, 231, 232) 45px 45px,
+    rgb(228, 231, 232) 46px 46px,
+    rgb(228, 231, 232) 47px 47px,
+    rgb(228, 232, 233) 48px 48px,
+    rgb(228, 232, 233) 49px 49px,
+    rgb(229, 232, 233) 50px 50px,
+    rgb(229, 233, 234) 51px 51px,
+    rgb(229, 233, 234) 52px 52px,
+    rgb(230, 233, 234) 53px 53px,
+    rgb(230, 234, 235) 54px 54px,
+    rgb(230, 234, 235) 55px 55px,
+    rgb(230, 234, 235) 56px 56px,
+    rgb(231, 234, 235) 57px 57px,
+    rgb(231, 235, 236) 58px 58px,
+    rgb(231, 235, 236) 59px 59px,
+    rgb(232, 235, 236) 60px 60px,
+    rgb(232, 236, 237) 61px 61px,
+    rgb(232, 236, 237) 62px 62px,
+    rgb(232, 236, 237) 63px 63px,
+    rgb(233, 237, 238) 64px 64px,
+    rgb(233, 237, 238) 65px 65px,
+    rgb(233, 237, 238) 66px 66px,
+    rgb(234, 237, 238) 67px 67px,
+    rgb(234, 238, 239) 68px 68px,
+    rgb(234, 238, 239) 69px 69px,
+    rgb(234, 238, 239) 70px 70px,
+    rgb(235, 239, 240) 71px 71px,
+    rgb(235, 239, 240) 72px 72px,
+    rgb(235, 239, 240) 73px 73px,
+    rgb(236, 240, 241) 74px 74px;
+}
+.error-status .error-code{
+	color: #e74c3c;
+}
+.error-status strong{
+	color: #e74c3c;
+	text-shadow: none;
+}
+.error-status small{
+	font-size: 20px;
+	display: block;
+	text-shadow: none;
+	color: #34495e;
+}
+/* End Error page */
+
+
+
+/* Search page*/
+.search-result{
+	position: relative;
+	padding-top: 15px;
+}
+.general-search{
+	margin-bottom: 20px;
+}
+.general-search h4, h3{
+	margin-bottom: 0px;
+}
+.general-search h3 a,
+.general-search h4 a{
+	text-decoration: underline;
+}
+.general-search h4, h3, p{
+	font-weight: 300;
+}
+.general-search p{
+	font-size: 13px;
+}
+.form-search-result{
+	margin-top: 30px;
+}
+/* End Search page*/
+
