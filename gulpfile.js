@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     livereload = require('connect-livereload'),
     pkg = require('./package.json'),
     livereloadport = 35729,
-    serverport = 5000
+    serverport = 8080
     ngAppBase = pkg.name;
 
 //We only configure the server here and start it only when running the watch task
@@ -23,7 +23,11 @@ var server = express();
 server.use(livereload({
   port: livereloadport
 }));
+
 server.use(express.static(__dirname + '/build'));    
+
+var nitrous_server = express();
+nitrous_server.use(express.static(__dirname + '/build'));    
 
 // =====================================
 //            File Bundles
@@ -102,7 +106,15 @@ gulp.task('serve', function() {
   //Set up your static fileserver, which serves files in the build dir
   server.listen(serverport);
   console.log('serving app on: ' + serverport);
- 
+});
+
+gulp.task('nitrous_serve', function() {
+  //Set up your static fileserver, which serves files in the build dir
+  nitrous_server.listen(serverport);
+  console.log('serving app on: ' + serverport);
+});
+
+gulp.task('livereload', function() {
   //Set up your livereload server
   lrserver.listen(livereloadport);
 });
@@ -127,6 +139,8 @@ gulp.task('rename', function(){
     .pipe(gulp.dest('src/'));
 });
 
-gulp.task('default', ['build', 'watch', 'serve']);
+gulp.task('default', ['build', 'watch', 'serve', 'livereload']);
+  
+gulp.task('nitrous', ['build', 'watch', 'nitrous_serve']);
 
 gulp.task('build', ['move','templatify', 'js']);
