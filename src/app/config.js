@@ -6,4 +6,23 @@ angular.module('notes.web')
    .constant('version', '0.1')
 
    // where to redirect users if they need to authenticate (see module.routeSecurity)
-   .constant('loginRedirectPath', '/login');
+   .constant('loginRedirectPath', '/login')
+
+   .config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('notes', {
+                abstract: true,
+                templateUrl: '/partials/layout_main.tmpl.html'
+                // resolve: {
+                //     auth: function(){
+                //         return true;
+                //     }
+                // }
+            })
+            .state('notes.home', {
+                url: '/',
+                templateUrl: '/partials/home.tmpl.html'
+            });
+
+        $urlRouterProvider.otherwise('/');
+    });
