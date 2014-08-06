@@ -28,10 +28,10 @@ App Notes
 State Structure
 ----
 
-* auth (layout)
-    * auth.login
-    * auth.register
 * notes (layout)
+    * notes.auth
+        * notes.auth.login
+        * notes.auth.register
     * notes.home
     * notes.notebook.note
 
@@ -42,3 +42,24 @@ State Notes
   state, but i don't feel that _new_ states should be able to live in the URL
   history. I don't think a user should be able to "back-button" their way back
   to this actionable _new_ state
+
+Services
+----
+
+* notebookService
+    * list
+    * getById
+    * saveNotebook
+    * shareNotebook
+    * deleteNotebook
+    * listNotes
+    * getNoteById
+    * saveNote
+    * shareNote
+    * deleteNote
+* authService
+    * login
+    * register
+    * forgotPassword
+* userService
+    * searchByUsername
